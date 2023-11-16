@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="footer">
+
+    <div class="footer_sect_pnl">
+        <footer>
+        <div class="flex" id="foot">
+            <ul>
+                <li><strong>company :</strong> 키매(KKIMAE)</li>
+                <li><strong>Business Registration No :</strong> [261-12-*****]</li>
+                <li><strong>Permit :</strong> 2019-경기광명-****호</li>
+                <li><strong>Address :</strong> 14322 경기도 광명시 하안로 ** (소하동) 광명테크노파크 *동 **</li>
+            </ul>
+            <ul>
+                <li><strong>CEO :</strong> 김*선</li>
+                <li><strong>Phone  :</strong> 02)818-****</li>
+                <li><strong>Personal Information Manager :</strong> 김*선(kkimae-@naver.com)</li>
+            <ul>
+                <li>Copyright © KKIMAE. All rights reserved.</li>
+            </ul>
+        </div>
+        <div id="gobottom"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+         $('.top').animate({'width':'100%'},1000,function(){
+        $('.right').animate({'height':'100%'},1000,function(){
+            $('.bottom').animate({'width':'100%'},1000,function(){
+                $('.left').animate({'height':'100%'},1000,function(){
+                    $('.main').fadeOut();
+                })
+                $('.startbg').delay('1250').fadeOut();
+                })
+            })
+        })
+        $('.tmain_menu').mouseenter(function(){
+            $('.tsub_menu').stop().slideDown()
+            $('.tmain_menu').mouseleave(function(){
+                $('.tsub_menu').stop().slideUp()
+            })
+        })
+    </script>
+    </div>
+    
+</div>
+
+</html>

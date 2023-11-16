@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}"
+ 	  lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>login box</title>
+
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+</style>
+
+<link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body class="login_body">
+	<!-- layout -->
+	<div layout:fragment="content" class="main_sect_pnl">
+
+		<script th:inline="javascript" th:if="${error == 'true'}">
+	 	<!--
+			alert([[${msg.message}]]);
+	 	//-->
+		</script>
+
+		<!-- 1. 로그인 박스 시작 -->
+		<div id="login_box" class="login">
+            <h2>Log-in</h2>
+			<form id="login_frm" method="post" th:action="@{'/login'}">
+				<div class="idpas">
+                    <div id="id_box" class="login_id">
+                        <h4 class="notice">Username</h4>
+                        <input type="text" id="username" name="username" size="30"
+                            maxlength="20" placeholder="username">
+
+                        <div id="id_fld_err_pnl"></div>
+                    </div>
+
+                    <div id="pw_box" class="login_pw">
+                        <h4 class="notice">Password</h4>
+                        <input type="text" id="password" name="password" size="30"
+                            maxlength="20" placeholder="password">
+
+                        <div id="password_fld_err_pnl"></div>
+                    </div>
+                </div>
+
+                <div class="submit_btn">
+                    <div id="submit_box">
+                        <input type="submit" id="login_btn" value="로그인">
+                    </div>
+                    
+                    <div id="join_box">
+                        <input type="button" id="join_btn" value="회원가입" 
+                            onclick="location.href='/memberProject/member/join.do'"/>
+                    </div>
+                </div>
+			</form>
+		</div>
+		<!-- 1. 로그인 박스 끝 -->
+</div> <!--// layout -->
+ 
+</body>
+</html>

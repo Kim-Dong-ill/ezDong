@@ -1,0 +1,131 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
+
+<head>
+  <!-- css, JS -->  
+  <link rel="stylesheet" th:href="@{css/shop.css}">
+</head>
+
+<div layout:fragment="content" class="main_sect_pnl">
+	
+	<div class="content_sect_pnl">
+			
+        <div id="shop_box">
+            <div id="shop_inner">
+
+                <div id="catagory">
+                    <P>T-shirt</P>
+                </div>
+
+                <div id="shop_container">
+                    <div id="row1">
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_11}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t1.jpg" alt="">
+                                <p>DEEP NIGHT! half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_12}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t2.jpg" alt="">
+                                <p>as one pleases half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_13}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t3.jpg" alt="">
+                                <p>DEEP NIGHT! half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="row2">
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_14}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t4.jpg" alt="">
+                                <p>DEEP NIGHT! half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_15}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t5.jpg" alt="">
+                                <p>Shape of love half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_16}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t6.jpg" alt="">
+                                <p>MONSTER INSIDE half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="row3">
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_17}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t7.jpg" alt="">
+                                <p>universe half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <div class="info_hover">
+                                <a target="_blank" th:href="@{/t_buy/cloth_18}">-상세 정보 보기-</a>
+                            </div>
+                            <div>
+                                <img src="/memberProject/images/t8.jpg" alt="">
+                                <p>kill bill half t-shirt</p>
+                                <p><strong>50% </strong> \31,000</p>
+                            </div>
+                        </div>
+                        <div class="poto_box">
+                            <img id="blind" src="/memberProject/images/t-9.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	
+	<!-- fixed 네비게이션 -->
+	<div id="fixed_box">
+	    <div id="fixed_inner">
+	        <div><a class="fixed_a" th:href="@{#gotop}"><img th:src="@{/images/arrow-1.png}" alt=""></a></div>
+	        <div><a class="fixed_a" th:href="@{/t_shirt}">Shop</a></div>
+	        <div><a class="fixed_a" th:href="@{/list}">Buy List</a></div>
+	        <div><a class="fixed_a" th:href="@{/member/view.do}">My Page</a></div>
+	        <div><a class="fixed_a" th:href="@{/logout}">Log out</a></div>
+	        <div><a class="fixed_a" th:href="@{#gobottom}"><img th:src="@{/images/arrow-2.png}" alt=""></a></div>
+	    </div>
+	</div>
+	
+</div>
+
+</html>

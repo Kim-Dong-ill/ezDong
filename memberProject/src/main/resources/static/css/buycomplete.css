@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+@import url(./global.css);
+
+#buy_page {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+}
+#buy_page #buy_inner {
+  width: 1200px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#buy_page #buy_inner #buy_main {
+  width: 100%;
+}
+#buy_page #buy_inner #buy_main h2 {
+  padding-left: 50px;
+  margin: 30px 0 60px 0;
+  font-size: 40px;
+}
+#buy_page #buy_inner #buy_main #buy_box {
+  width: 100%;
+  height: 500px;
+}
+#buy_page #buy_inner #buy_main #buy_box #buy_table thead {
+  border-bottom: 2px solid #383636;
+  font-size: 18px;
+  line-height: 60px;
+}
+#buy_table img{
+	width: 50px;
+}
+tbody tr{
+	line-height: 65px;
+}
+.pagination .page-item .page-link{
+	color: #383636;
+}
+ /*-----fixed 메뉴------  */
+ #fixed_box {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  border: none;
+  width: 100px;
+  height: 330px;
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+#fixed_box #fixed_inner {
+  margin: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#fixed_box #fixed_inner div:nth-child(1), #fixed_box #fixed_inner div:nth-child(6) {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fixed_box #fixed_inner div:nth-child(1) .fixed_a, #fixed_box #fixed_inner div:nth-child(6) .fixed_a {
+  padding: 0 24px;
+  height: 100%;
+}
+#fixed_box #fixed_inner div:nth-child(1) .fixed_a img, #fixed_box #fixed_inner div:nth-child(6) .fixed_a img {
+  width: 100%;
+  height: 20px;
+}
+#fixed_box #fixed_inner div:nth-child(2) {
+  border-top: 1px solid #b7b7b7;
+}
+#fixed_box #fixed_inner div:nth-child(2), #fixed_box #fixed_inner div:nth-child(3), #fixed_box #fixed_inner div:nth-child(4), #fixed_box #fixed_inner div:nth-child(5) {
+  border-bottom: 1px solid #b7b7b7;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#fixed_box #fixed_inner div:nth-child(2) .fixed_a, #fixed_box #fixed_inner div:nth-child(3) .fixed_a, #fixed_box #fixed_inner div:nth-child(4) .fixed_a, #fixed_box #fixed_inner div:nth-child(5) .fixed_a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  font-size: 13px;
+}

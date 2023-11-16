@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>home</title>
+
+<!-- 10.17 : 전체적인 CSS 조정(추가/변경) -->
+
+<!-- bootstrap -->
+<link rel="stylesheet" th:href="@{/bootstrap/5.3.1/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/home.css}">
+<script th:src="@{/bootstrap/5.3.1/js/bootstrap.min.js}" charset="UTF-8"></script>
+
+
+
+</head>
+<body>
+
+	<div th:replace="layout/header :: header"></div>
+	
+	<div layout:fragment="content"></div>
+	
+	<div th:replace="layout/footer :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
+
+<head>
+  <!-- css, JS -->  
+  <link rel="stylesheet" th:href="@{/css/buypage.css}">
+
+ <!-- Initialize Swiper -->
+ 
+    <link rel="stylesheet" th:href="@{/swiper/9.4.1/swiper-bundle.min.css}">
+    <script th:src="@{/swiper/9.4.1/swiper-bundle.min.js}"></script>
+    
+
+</head>
+<body>
+        
+    <div layout:fragment="content" class="main_sect_pnl">
+        <div class="content_sect_pnl">
+            <div id="section1">
+                <div id="section1_inner">
+	                <form id="buy_form" name="form" th:action="@{/buycomplete}" method="get" onsubmit="return sendform()">
+	                    <div id="section1_poto">
+	                        <div class="swiper mySwiper">
+	                        <div class="swiper-wrapper">
+	                            <div class="swiper-slide">
+	                            	<img th:src="@{'/images/' + ${vo.product_img_1}}" alt="">
+	                            	<input type="hidden" name="buy_img" th:value="${vo.product_img_1}"><!-- '/memberProject/images/' +  -->
+	                            </div>
+	                            <div class="swiper-slide">
+	                            	<img th:src="@{'/images/' + ${vo.product_img_2}}" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="swiper-button-next"></div>
+	                        <div class="swiper-button-prev"></div>
+	                        <div class="swiper-pagination"></div>
+	                    </div>
+	                </div>
+	                <div id="section1_box">
+	                    <div id="section1_name">
+	                        [[${vo.product_name}]]
+	                        <input type="hidden" name="buy_name" th:value=${vo.product_name}>
+	                    </div>
+	                    <div id="section1_main">
+	                        <div id="section1_info">
+	                            <div id="info_mind">
+	                                <div class="section1_row">
+	                                    <div>브랜드</div>
+	                                    <div>-키매(KKIMAE)-</div>
+	                                </div>
+	                                <div class="section1_row">
+	                                    <div>가격</div>
+	                                    <div>-￦31,000-</div>
+	                                </div>
+	                                <div class="section1_row">
+	                                    <div>배송비</div>
+	                                    <div>-무료-</div>
+	                                </div>
+	                            </div>
+	                            <div id="section1_select">
+	                                <div class="select_row">
+	                                    <div>> 색상</div>
+	                                    <div>
+	                                        <select id="buy_color" name="buy_color" class="form-select" aria-label="Default select example">
+	                                            <option selected value="0">- [필수] 옵션을 선택해 주세요 -</option>
+	                                            <option disabled value="1">- - - - - - - - - - - - - - - - - - - - - </option>
+	                                            <option th:value="${vo.product_color_1}">- [[${vo.product_color_1}]]</option>
+	                                            <option th:value="${vo.product_color_2}">- [[${vo.product_color_2}]]</option>
+	                                        </select>
+	                                    </div>
+	                                </div>
+	                                <div class="select_row">
+	                                    <div>> 사이즈</div>
+	                                    <div>
+	                                        <select id="buy_size" name="buy_size" class="form-select" aria-label="Default select example">
+	                                            <option selected value="0">- [필수] 옵션을 선택해 주세요 -</option>
+	                                            <option disabled value="1">- - - - - - - - - - - - - - - - - - - - - </option>
+	                                            <option th:value="s">- S</option>
+	                                            <option th:value="m">- M</option>
+	                                            <option th:value="l">- L</option>
+	                                            <option th:value="xl">- XL</option>
+	                                            <option th:value="2xl">- 2XL</option>
+	                                        </select>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div id="section1_price">
+	                        <!-- <form name="form" method="get"> -->
+	                        <div id="sumform">
+	                            <div id="mm">> 수량</div> 
+	                            <input type="hidden" id="sell_price" name="sell_price" value="31000">
+	                            <input id="input_amount" type="text" name="amount" value="1" size="3" onchange="change();"> 
+	                            <input id="plus_bt" type="button" value=" + " onclick="add();">
+	                            <input id="minus_bt" type="button" value=" - " onclick="del();"><br>
+	                            <input type="hidden" id="buy_price" name="buy_price" size="11" readonly>
+	                            <div id="my_sum"></div>
+                        	</div>
+	                        <!-- </form> -->
+	                    </div>
+	                    <input type="hidden" name="buy_id" th:value="${vo.id}">
+	                    <div id="buy_bt">
+	                        <div>
+	                            <button type="submit" class="btn btn-secondary">BUY NOW</button>
+	                            <input type="hidden" name="buy_date" id="buy_date" >
+	                        </div>
+	                    </div>
+	                </div>
+                </form>
+                
+            </div>
+
+            <div id="section2">
+                <div id="section2_inner">
+                    <div>
+                        <img th:src="@{'/images/' + ${vo.product_img_1}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section3">
+                <div id="section3_inner">
+                    <div>
+                        <img src="/memberProject/images/size_info1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section4">
+                <div id="section4_inner">
+                    <div>
+                        <img src="/memberProject/images/size_info2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section5">
+                <div id="section5_inner">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h3 class="accordion-header">
+                            <button class="section5_button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              PAYMENT
+                            </button>
+                          </h3>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div>
+                                    고액 결제의 경우 안전을 위해 카드사에서 확인 전화를 드릴 수도 있습니다. <br>
+                                    확인 과정에서 도난 카드의 사용이나 타인 명의의 주문 등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.   
+                                </div>
+                                <div>
+                                    <h4>info</h4>
+                                    <div>
+                                        해당 제품은 PRINTSTAR 브랜드 남여공용 라운드 티셔츠입니다.<br>
+                                        면 100% 도톰한 17수로 제작되었으며 오래 입어도 모양이 변하지 않습니다.<br>
+                                        신축성이 좋고 부드러운 감촉입니다.
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>washing</h4>
+                                    <div>
+                                        단독 손세탁 가능합니다.<br>
+                                        프린트 제품 세탁시 뒤집어 찬물에 세탁하셔야 합니다. <br>
+                                        다리미 사용시 천을 덧댄 후 다림질 해주십시오.
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h3 class="accordion-header">
+                            <button class="section5_button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              DELIVERY
+                            </button>
+                          </h3>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div>
+                                    배송 방법 : 택배<br>
+                                    배송 지역 : 전국<br>
+                                    배송 비용 : 무료<br>
+                                    배송 기간 : 3일 ~ 7일<br>
+                                    배송 안내 :
+                                </div>
+                                <div>
+                                    <strong>제작기간 2~5일 배송기간 3~7일</strong><br>
+                                    더 늦어질 경우 따로 문자 발송되니, 여유 있게 주문 해주시기 바랍니다.
+                                </div>
+                                <div>
+                                    모든 상품은 주문 제작으로 진행되며 단순변심으로 인한 교환,환불이 불가합니다.<br>
+                                    오배송 및 제품하자로 교환 및 환불을 진행하실 경우에는 <br>
+                                    반드시 <strong>자사몰로 신청 후</strong><br>
+                                    안내드린 절차와 지정된 배송기사님께 전달해주셔야 하며<br>
+                                    임의로 반품시 착불로 재반송 처리될 수 있는 점 미리 공지해드립니다.
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h3 class="accordion-header">
+                            <button class="section5_button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              EXCHANGE
+                            </button>
+                          </h3>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <strong>교환 및 반품 주소</strong><br>
+                                    오배송 및 제품 하자일 경우 반드시 자사몰(Q&A) 또는<br>
+                                    이메일<strong>(kkimae-@naver.com)</strong>신청 후<br>
+                                    안내 드린 절차와 지정된 배송기사님께 전달해주셔야 합니다.<br>
+                                    (임의로 반품시 <strong>착불로 재반송</strong> 처리될 수 있는 점 미리 공지해드립니다.)
+                                </div>
+                                <div>
+                                    <strong>교환 및 반품이 가능한 경우</strong><br>
+                                    오배송 및 착용 전 제품 하자가 발견 될 경우(프린팅 오류, 제품이상 등)<br>
+                                    주문한 상품과 다른 상품이 온 경우 
+                                </div>
+                                <div>
+                                    <strong>교환 및 반품이 불가능한 경우</strong><br>
+                                    고객님의 책임 있는 사유로 상품이 훼손된 경우<br>
+                                    단순변심(사이즈, 컬러, 디자인, 교정 가능한 실밥처리 등)<br>
+                                    시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우<br>
+                                    (자세한 내용은  게시판 Q&A or 이메일 kkimae-@naver.com 이용해 주시기 바랍니다.)
+                                </div>
+                                <div>
+                                    주문제작 상품은 단순변심(사이즈,색상, 등)으로 인한 교환,환불이 불가능합니다.<br>
+                                    상품 제작이 진행 될 경우 취소 및 변경이 어려울 수 있으며,<br>
+                                    제작 전 취소 및 변경을 원하실 경우 Q&amp;A 또는 카카오채널 '키매' 1:1문의&nbsp;이용해주시기 바랍니다.
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+	    </div>
+        </div>
+        
+        <!-- 스와이퍼  -->
+        <script th:inline="javascript">
+		    var swiper = new Swiper(".mySwiper", {
+		        slidesPerView: 1,
+		        spaceBetween: 30,
+		        loop: true,
+		        pagination: {
+		            el: ".swiper-pagination",
+		            clickable: true,
+		        },
+		    navigation: {
+		        nextEl: ".swiper-button-next",
+		        prevEl: ".swiper-button-prev",
+		    },
+			});
+		</script>
+
+
+
+	<!-- 수량에 따른 총 price -->
+	<script th:inline="javascript">
+	
+		var sell_price;
+		var amount = 1;
+	
+		function init () {
+		    sell_price = document.form.sell_price.value;
+		    amount = document.form.amount.value;
+		    document.form.buy_price.value = sell_price;
+		    change();
+		}
+		
+		init();
+		
+		function add () {
+		    hm = document.form.amount;
+		    hm.value ++ ;
+			sell_price = document.getElementById("sell_price").value;
+			
+		    var sum_ = parseInt(hm.value) * sell_price;
+		    document.getElementById("my_sum").innerHTML = numberWithCommas(sum_)+'원';
+		    document.getElementById("buy_price").value = sum_;
+		}
+		
+		function del () {
+		    hm = document.form.amount;
+	        if (hm.value > 1) {
+		            hm.value -- ;
+		            var sum_ = parseInt(hm.value) * sell_price;
+		            document.getElementById("my_sum").innerHTML = numberWithCommas(sum_)+'원';
+		            document.getElementById("buy_price").value = sum_;
+	        }
+		}
+		
+		function change () {
+		    hm = document.form.amount;
+	        if (hm.value < 0) {
+		            hm.value = 0;
+	        }
+		    var sum_ = parseInt(hm.value) * sell_price;
+			document.getElementById("my_sum").innerHTML = numberWithCommas(sum_)+'원';
+			document.getElementById("buy_price").value = sum_;
+		} 
+		
+		/* 숫자 포맷 */
+		  
+	      function numberWithCommas(x) {
+	          x = x.toString();
+	          var pattern = /(-?\d+)(\d{3})/;
+	          while (pattern.test(x))
+	              x = x.replace(pattern, "$1,$2");
+	          return x;
+		}
+    </script>
+    
+    
+    <!-- BUY NOW 클릭시 confirm창 -->
+   	<script th:inline="javascript">
+	   	function sendform(){
+		   
+		   let color = document.getElementById("buy_color").value
+		   let size = document.getElementById("buy_size").value
+		   
+		   if(color == "0"||color == ""){
+				alert("[필수] 색상을 선택해 주세요.")
+				return false;
+			}if(size == "0"||size == ""){
+				alert("[필수] 사이즈를 선택해 주세요")
+				return false;
+			}if(confirm("구매하시겠습니까?")){
+				alert("구매완료")
+			}else{
+				alert("취소")
+				return false;
+			}	
+	   }//
+   </script>
+    
+
+    <!-- 날짜 확인 -->
+    <script th:inline="javascript">
+		let buydate = new Date();
+		
+		let year = buydate.getFullYear();
+		let month = buydate.getMonth()+1;
+		let date = buydate.getDate();
+
+		var buyadate = year + '/' + month + '/' + date
+		document.getElementById('buy_date').value = buyadate; 
+    </script>
+    
+    </div>
+    
+</body>
+
+
+</html>

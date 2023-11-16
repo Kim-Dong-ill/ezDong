@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- 10.17 : thymeleaf dialect -->
+<html lang="ko-kr" 
+      xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
+	  
+<head>
+<meta charset="UTF-8">
+<title>home</title>
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<script th:src="@{'/js/home.js'}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div layout:fragment="content" class="main_sect_pnl">
+	
+	<!-- home네모 -->
+    <div class="main">
+        <div class="line top"></div>
+        <div class="line right"></div>
+        <div class="line bottom"></div>
+        <div class="line left"></div>
+    </div><!-- home네모 -->
+
+	<!-- home슬라이더 -->
+    <main class="flex">
+        <div class="wrapper">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three">
+            	<div class="slider">
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                 </div>
+            </div>
+            <div class="four"></div>
+            <div class="five"></div>
+            <div class="six"></div>
+          </div>
+    </main><!-- home슬라이더 -->
+    
+    
+    <!-- section2 -->
+	<div id="section2">
+        <div id="section2_inner">
+            <div id="section2_h">
+                I Knew<br>
+                if I stayed around long enough,<br>
+                something like this<br>
+                would happen.
+            </div>
+            <div id="section2_main">
+                <div id="section2_row1">
+                    <div id="row1_img"><img th:src="@{/images/row1.jpg}" alt=""></div>
+                    <div id="row1_col">
+                        This is the true joy in life,<br>
+                        the being used for a purpose recognized by yourself<br>
+                        as a mighty one instead of a feverish selfish <br>
+                        little clod of ailments and grievances <br>
+                        complaining that the world will not devote itself <br>
+                        to making you happy.</div>
+                </div>
+                <div id="section2_row2">
+                    <div id="row2_col">
+                        I want to be thoroughly used up<br>
+                        when I die, for the harder I work the more I live.<br>
+                        I rejoice in life for its own sake.
+                    </div>
+                    <div id="row2_img">
+                        <img th:src="@{/images/row2.png}" alt="">
+                    </div>
+                </div>
+                <div id="section2_row3">
+                    <div id="row3_col">
+                       	 제아<br>
+                        with<br>
+                        kimmae
+                    </div>
+                    <div id="row3_img">
+                        <img th:src="@{/images/row3.jpg}" alt="">
+                    </div>
+                    <div class="rotate_imge" id="row3_recod">
+                        <img th:src="@{/images/r1.svg}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- section2 -->
+    
+		
+	<!-- fixed 네비게이션 -->
+	<div id="fixed_box">
+	    <div id="fixed_inner">
+	        <div><a class="fixed_a" th:href="@{#gotop}"><img th:src="@{/images/arrow-1.png}" alt=""></a></div>
+	        <div><a class="fixed_a" th:href="@{/t_shirt}">Shop</a></div>
+	        <div><a class="fixed_a" th:href="@{/list}">Buy List</a></div>
+	        <div><a class="fixed_a" th:href="@{/member/view.do}">My Page</a></div>
+	        <div><a class="fixed_a" th:href="@{/logout}">Log out</a></div>
+	        <div><a class="fixed_a" th:href="@{#gobottom}"><img th:src="@{/images/arrow-2.png}" alt=""></a></div>
+	    </div>
+	</div><!-- fixed 네비게이션 -->
+	
+	
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<!-- xmlns:sec="http://www.thymeleaf.org/extras/spring-security" -->
+	
+	
+<div th:fragment="header">
+	
+<link rel="stylesheet" th:href="@{/css/home.css}">
+	<!-- 인증 정보 확인  -->
+	<!-- 인증 정보 : [[${#authentication}]] -->
+
+	<div class="header_sect_pnl">
+	
+			<!-- 10.17 : 
+			
+			- Spring Security/Thymeleaf
+			: https://github.com/thymeleaf/thymeleaf-extras-springsecurity
+			
+			- Spring Security : Auth Method(인증/인가 관련 메서드)
+			: https://cafe.naver.com/ezjava3/756
+			
+			-->
+	<header>
+		<div id="gotop"></div>
+        <div class="flex" id="nav">
+            <h1>
+                <a th:href="@{/}">
+                    <img th:src="@{/images/a297b9a67075b2bc469cb371800d6eb0fe84e3261z.jpg}" alt="">
+                </a>
+            </h1>
+            <ul class="flex" id="log">
+            	<li sec:authorize="isAuthenticated()"><img id="people_icon" alt="" th:src="@{/images/people_icon.png}"></li>
+            	<li sec:authorize="isAuthenticated()" th:text="${#authentication.name}"></li>
+            	<li class="tmain_menu"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop&nbsp;&nbsp;|</a>
+                    <ul class="tsub_menu">
+                        <li><a th:href="@{/t_shirt}">T-shirt</a></li>
+                        <li><a th:href="@{/crewneck}">Crewneck</a></li>
+                        <li><a th:href="@{/hoodie}">Hoodie</a></li>
+                    </ul>
+                </li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/login}">&nbsp;&nbsp;로그인&nbsp;&nbsp;|</a></li>
+                <li sec:authorize="isAnonymous()"><a th:href="@{/member/join.do}">&nbsp;&nbsp;회원가입</a></li>
+                
+                <!-- 로그인 이후 -->
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/list}">&nbsp;&nbsp;Buy List&nbsp;&nbsp;|</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/member/view.do}">&nbsp;&nbsp;My Page&nbsp;&nbsp;|</a></li>
+                <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/board/write.do}">&nbsp;&nbsp;게시글 쓰기&nbsp;&nbsp;|</a></li> -->
+                <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/board/list.do}">&nbsp;&nbsp;게시글 목록&nbsp;&nbsp;|</a></li> -->
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">&nbsp;&nbsp;Log out&nbsp;&nbsp;</a></li>
+
+                <!-- 관리자 등급 -->
+                <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#">회원관리</a></li>
+            </ul>
+        </div>
+        <div class="topline"></div>
+    	<div class="startbg"></div>
+    	<div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+              <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+              <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+              <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+            </div>
+          </div>
+    </header>
+	
+	</div>
+
+</div>

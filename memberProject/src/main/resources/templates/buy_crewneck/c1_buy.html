@@ -113,6 +113,17 @@
 	                    </div>
 	                </div>
                 </form>
+                
+                <!-- cart button -->
+                <div id="cart_div">
+                    <form id="cart_form" th:action="@{/cart}" method="get" onsubmit="return getcolor();">
+                        <input type="hidden" name="cartImg" th:value="${vo.product_img_1}"><!-- img -->
+                        <input type="hidden" name="cartName" th:value=${vo.product_name}><!-- product name -->
+                        <input type="hidden" name="cartId" th:value="${vo.id}"><!-- product id -->
+                        <button id="cart_form_btn" class="btn btn-light" type="submit" onclick="javascript:cartbtn()">cart</button>
+                    </form>	
+                </div>
+                
             </div>
 
             <div id="section2">
@@ -353,6 +364,15 @@
 			}	
 	   }//
    	</script>
+   	
+   	<!-- 장바구니 클릭시 알람창 -->
+   <script th:inline="javascript">
+   
+		function cartbtn(){
+			alert("장바구니에 저장했습니다.")
+		}
+	   	
+   </script>
     
      <!-- 날짜 확인 -->
     <script th:inline="javascript">

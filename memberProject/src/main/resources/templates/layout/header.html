@@ -44,6 +44,7 @@
                 
                 <!-- 로그인 이후 -->
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/list}">&nbsp;&nbsp;Buy List&nbsp;&nbsp;|</a></li>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/cart/list}">&nbsp;&nbsp;Cart List&nbsp;&nbsp;|</a></li>
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/member/view.do}">&nbsp;&nbsp;My Page&nbsp;&nbsp;|</a></li>
                 <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/board/write.do}">&nbsp;&nbsp;게시글 쓰기&nbsp;&nbsp;|</a></li> -->
                 <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/board/list.do}">&nbsp;&nbsp;게시글 목록&nbsp;&nbsp;|</a></li> -->

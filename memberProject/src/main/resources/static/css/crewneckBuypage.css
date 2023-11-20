@@ -57,12 +57,31 @@ body {
   height: 900px;
 }
 .content_sect_pnl #section1 #section1_inner {
+	position: relative;
   display: flex;
   justify-content: space-between;
   margin: 100px 0;
   width: 100%;
 }
-.content_sect_pnl #section1 #section1_inner form{
+#cart_form {
+  width: 200px;
+  position: absolute;
+  top: 692px;
+  right: 250px;
+}
+#cart_form input {
+  width: 200px;
+}
+#cart_form #cart_form_btn {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 200px;
+  height: 40px;
+  font-weight: 500;
+  font-size:23px;
+}
+.content_sect_pnl #section1 #section1_inner #buy_form{
 	display: flex;
   	justify-content: space-between;
   	margin: 100px 0;
@@ -77,7 +96,7 @@ body {
 }
 .content_sect_pnl #section1 #section1_inner #section1_box #section1_name {
   border-bottom: 1px solid rgba(0, 0, 0, 0.164);
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bolder;
   padding: 35px 0;
 }
